@@ -37,6 +37,7 @@ public class DungeonGenerator : MonoBehaviour
     public int startPos = 0;
     public Rule[] rooms;
     public Vector2 offset;
+    public int Keys = 0;
 
     List<Cell> board;
 
@@ -50,27 +51,41 @@ public class DungeonGenerator : MonoBehaviour
     {
         for (int i = 0; i < size.x; i++)
         {
+            
+
             for (int j = 0; j < size.y; j++)
             {
                 Cell currentCell = board[(i + j * size.x)];
                 if (currentCell.visited)
                 {
                     int randomRoom = Random.Range(0, rooms.Length);
-                    if (i == size.x - 1 && j == size.y - 1)
-                    {
-                        randomRoom = 1;
-                    }
-                    else
+                    if (i == 0)
                     {
                         randomRoom = 0;
                     }
-                    var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
-                    newRoom.UpdateRoom(currentCell.status);
-                    newRoom.name += " " + i + "-" + j;
-
+                    else
+                    {
+                        if (i == size.x - 1 && j == size.y - 1)
+                        {
+                            randomRoom = 2;
+                        }
+                        else if (Keys > 0 && randomRoom == 1)
+                        {
+                            Keys--;
+                            randomRoom = 1;
+                        }
+                        else
+                        {
+                            randomRoom = 0;
+                        }
+                    }
+                        var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+                        newRoom.UpdateRoom(currentCell.status);
+                        newRoom.name += " " + i + "-" + j;
                 }
-                
+
             }
+            
         }
 
     }

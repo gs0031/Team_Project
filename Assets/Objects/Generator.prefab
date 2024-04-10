@@ -50,6 +50,10 @@ MonoBehaviour:
     minPosition: {x: 1, y: 1}
     maxPosition: {x: 1000, y: 1000}
     obligatory: 0
+  - room: {fileID: 2839637570276725782, guid: 0dce27defafcc6d4eac7d7d1e336be73, type: 3}
+    minPosition: {x: 1, y: 1}
+    maxPosition: {x: 1000, y: 1000}
+    obligatory: 0
   - room: {fileID: 2839637570276725782, guid: baa8005143794924aa9f808729fa788c, type: 3}
     minPosition: {x: 1, y: 1}
     maxPosition: {x: 1000, y: 1000}
