@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class KeyPickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject keyObject;
+    public GameObject DestroyKey;
+    public void Destroy()
     {
-        
+        keyObject.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider collision)
     {
-        
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
+
+        GameObject collidedWith = collision.gameObject;
+
+
+        if (collidedWith.CompareTag("Character"))
+        {
+            // Load the next scene
+            Destroy();
+        }
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
