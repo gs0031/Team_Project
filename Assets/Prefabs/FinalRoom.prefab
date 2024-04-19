@@ -2369,7 +2369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7c01fe88f5494428e9ed5ff788069e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
+  value: 0
   DoorObject: {fileID: 2426180758610576931}
   DestroyDoor: {fileID: 0}
 --- !u!1001 &6504558602142119386

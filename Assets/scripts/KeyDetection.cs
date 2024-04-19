@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class KeyDetection : MonoBehaviour
 {
-    public int KeyValue = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-    void OnTriggerEnter(Collider collision)
-    {
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
-
-        GameObject collidedWith = collision.gameObject;
+        public int KeyValue1; // Initialize KeyValue to 0
+        public int KeyValue;
 
 
-        if (collidedWith.CompareTag("Character"))
+        // OnTriggerEnter is called when the Collider other enters the trigger
+        void OnTriggerEnter(Collider other)
         {
-            KeyValue = 1;
+            // Check if the object that collided is tagged as "Character"
+            if (other.CompareTag("Character"))
+            {
+                KeyValue1++; // Increment KeyValue by 1
+                Debug.Log("Collision detected with: " + other.gameObject.name);
+                KeyValue = KeyValue1;
+            }
         }
-        // Update is called once per frame
-        void Update()
+    
+    // Update is called once per frame
+    void Update()
         {
 
         }
     }
-}
+
