@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Room
+  - Character
   layers:
   - Default
   - TransparentFX
