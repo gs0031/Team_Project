@@ -37,6 +37,7 @@ public class DungeonGenerator : MonoBehaviour
     public int startPos = 0;
     public Rule[] rooms;
     public Vector2 offset;
+    public int Keys = 0;
 
     List<Cell> board;
 
@@ -48,51 +49,43 @@ public class DungeonGenerator : MonoBehaviour
 
     void GenerateDungeon()
     {
-
         for (int i = 0; i < size.x; i++)
         {
+            
+
             for (int j = 0; j < size.y; j++)
             {
                 Cell currentCell = board[(i + j * size.x)];
                 if (currentCell.visited)
                 {
-                    int randomRoom = -1;
-                    List<int> availableRooms = new List<int>();
-
-                    for (int k = 0; k < rooms.Length; k++)
+                    int randomRoom = Random.Range(0, rooms.Length);
+                    if (i == 0)
                     {
-                        int p = rooms[k].ProbabilityOfSpawning(i, j);
-
-                        if (p == 2)
-                        {
-                            randomRoom = k;
-                            break;
-                        }
-                        else if (p == 1)
-                        {
-                            availableRooms.Add(k);
-                        }
+                        randomRoom = 0;
                     }
-
-                    if (randomRoom == -1)
+                    else
                     {
-                        if (availableRooms.Count > 0)
+                        if (i == size.x - 1 && j == size.y - 1)
                         {
-                            randomRoom = availableRooms[Random.Range(0, availableRooms.Count)];
+                            randomRoom = 2;
+                        }
+                        else if (Keys > 0 && randomRoom == 1)
+                        {
+                            Keys--;
+                            randomRoom = 1;
                         }
                         else
                         {
                             randomRoom = 0;
                         }
                     }
-
-
-                    var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
-                    newRoom.UpdateRoom(currentCell.status);
-                    newRoom.name += " " + i + "-" + j;
-
+                        var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+                        newRoom.UpdateRoom(currentCell.status);
+                        newRoom.name += " " + i + "-" + j;
                 }
+
             }
+            
         }
 
     }
