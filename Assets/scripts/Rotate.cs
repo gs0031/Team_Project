@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelClear : MonoBehaviour
+public class Rotate : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,8 @@ public class LevelClear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GameObject RotObject = GetComponent<GameObject>();
+        //Rotate 90 deg
+        transform.Rotate(new Vector3(0, 0, 2), Space.Self);
     }
 }

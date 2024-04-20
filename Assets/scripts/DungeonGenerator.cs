@@ -35,6 +35,7 @@ public class DungeonGenerator : MonoBehaviour
 
     public Vector2Int size;
     public int startPos = 0;
+    public static int KeysNeeded = 0;
     public Rule[] rooms;
     public Vector2 offset;
     public int Keys = 0;
@@ -73,6 +74,7 @@ public class DungeonGenerator : MonoBehaviour
                         {
                             Keys--;
                             randomRoom = 1;
+                            KeysNeeded++;
                         }
                         else
                         {
