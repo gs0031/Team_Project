@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     public GameObject doorObject;
-
+    public int wait = 4;
     public void Destroy()
     {
         doorObject.SetActive(false);
@@ -25,10 +25,6 @@ public class Door : MonoBehaviour
         {
             // Load the next scene
             Destroy();
-
-            //Wait for 2 seconds
-            new WaitForSecondsRealtime(2);
-
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
