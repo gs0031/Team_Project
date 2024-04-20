@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeyDetection : MonoBehaviour
 {
-    public static int KeyValue1; // Initialize KeyValue to 0
+    public static int KeyValue1 = 0; // Initialize KeyValue to 0
     public int KeyValue;
 
     // OnTriggerEnter is called when the Collider other enters the trigger
