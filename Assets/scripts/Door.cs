@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,34 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    public GameObject DoorObject;
-    public KeyDetection keyDetection;
+    public GameObject doorObject;
+
+    public void Destroy()
+    {
+        doorObject.SetActive(false);
+    }
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
+        Debug.Log("KeyValue " + KeyDetection.KeyValue1);
+        Debug.Log("Keys Needed " + DungeonGenerator.KeysNeeded);
 
         GameObject collidedWith = collision.gameObject;
-        keyDetection = collision.gameObject.GetComponent<KeyDetection>();
 
-        // Get the ScoreCounter component
-        if (keyDetection != null)
+
+        if (collidedWith.CompareTag("Character") && KeyDetection.KeyValue1 == DungeonGenerator.KeysNeeded)
         {
-            int keyValue = keyDetection.KeyValue1;
-            // Check if the score field is set in ScoreCounter
-            if (keyValue != 0)
-            {
-                // Assign the score va
-                if (keyValue == 1)
-                {
-                    Scene currentScene = SceneManager.GetActiveScene();
+            // Load the next scene
+            Destroy();
 
-                    // Get the index of the current scene
-                    int currentSceneIndex = currentScene.buildIndex;
+            //Wait for 2 seconds
+            new WaitForSecondsRealtime(2);
 
-                    // Load the next scene
-                    SceneManager.LoadScene(currentSceneIndex + 1);
-                }
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    void Update()
+    {
+        int KeyFound = KeyDetection.KeyValue1;
+        int KeysNeeded = DungeonGenerator.KeysNeeded;
     }
 }

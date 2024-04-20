@@ -908,7 +908,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Hello, If you are reading this it means you are a poor\nlost soul. It
-    also means I have escaped.\n\n                 Collect 3 keys to escape each
+    also means I have escaped.\n\n                 Collect all keys to escape each
     level"
 --- !u!222 &1980911932
 CanvasRenderer:
