@@ -6,8 +6,8 @@ using TMPro;
 
 public class TimeBehavior : MonoBehaviour
 {
-    public float timer = 600;
-    public bool timerOn = false;
+    public float timer = 300;
+    public bool timerOn = true;
     public TextMeshProUGUI timerText;
 
     void Start()
@@ -40,7 +40,7 @@ public class TimeBehavior : MonoBehaviour
 
     public void ResetTimer()
     {
-        timer = 600; // Set timer back to initial value
+        timer = 300; // Set timer back to initial value
         timerOn = true; // Start the timer again if it was stopped
         UpdateTimerText(timer); // Update the timer UI text
     }
@@ -52,15 +52,14 @@ public class TimeBehavior : MonoBehaviour
         timerText.text = min.ToString("00") + ":" + secs.ToString("00");
     }
 
-    public void OnRestartTime()
-    {
-        ResetTimer();
-        PlayerPrefs.DeleteKey("timeValue");
-    }
-
     void LoadSceneOnTimeout()
     {
-        SceneManager.LoadScene("GameOverScene");
+        SceneManager.LoadScene("Game_Over");
+    }
+
+    private void Awake()
+    {
+        ResetTimer();
     }
 }
 

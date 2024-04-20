@@ -2074,6 +2074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 7070192281486412379}
+  wait: 2
 --- !u!1001 &4772591389970181108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2670,6 +2671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 7070192281486412379}
+  wait: 2
 --- !u!1001 &7391210789524532494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2846,6 +2848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 7070192281486412379}
+  wait: 2
 --- !u!114 &4758769724197638544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3162,6 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 7070192281486412379}
+  wait: 2
 --- !u!1001 &8180694420692550991
 PrefabInstance:
   m_ObjectHideFlags: 0

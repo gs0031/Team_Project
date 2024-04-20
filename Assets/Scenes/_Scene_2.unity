@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -268,6 +268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 7605345156223093307, guid: ee70d3e361a0a6041b8241bfe82c8e73, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 909786880}
     - target: {fileID: 7605345156223093308, guid: ee70d3e361a0a6041b8241bfe82c8e73, type: 3}
       propertyPath: m_RootOrder
       value: 2
