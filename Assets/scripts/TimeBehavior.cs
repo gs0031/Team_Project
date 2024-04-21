@@ -6,24 +6,29 @@ using TMPro;
 
 public class TimeBehavior : MonoBehaviour
 {
-    public float timer = 300;
+    public float timerSet = 360;
+    private static float timer = 360;
     public bool timerOn = true;
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timeValue;
 
     void Start()
     {
-        ResetTimer();
-        if (PlayerPrefs.HasKey("timeValue"))
+        timer = timerSet; // Set timer back to initial value
+        timerOn = true; // Start the timer again if it was stopped
+        UpdateTimerText(timer); // Update the timer UI text
+
+        if (PlayerPrefs.HasKey("timeValue") && SceneManager.GetActiveScene().buildIndex != 2)
         {
             timer = PlayerPrefs.GetFloat("timeValue");
         }
+
     }
 
     void Update()
     {
         if (timer >= 0 && timerOn)
         {
-            timer -= Time.deltaTime;
+            timer -= (Time.deltaTime/2);
             PlayerPrefs.SetFloat("timeValue", timer);
             UpdateTimerText(timer);
 
@@ -38,28 +43,16 @@ public class TimeBehavior : MonoBehaviour
         }
     }
 
-    public void ResetTimer()
-    {
-        timer = 300; // Set timer back to initial value
-        timerOn = true; // Start the timer again if it was stopped
-        UpdateTimerText(timer); // Update the timer UI text
-    }
-
     void UpdateTimerText(float remainingTime)
     {
         int min = Mathf.FloorToInt(remainingTime / 60);
         int secs = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = min.ToString("00") + ":" + secs.ToString("00");
+        timeValue.text = min.ToString("00") + ":" + secs.ToString("00");
     }
 
     void LoadSceneOnTimeout()
     {
         SceneManager.LoadScene("Game_Over");
-    }
-
-    private void Awake()
-    {
-        ResetTimer();
     }
 }
 
