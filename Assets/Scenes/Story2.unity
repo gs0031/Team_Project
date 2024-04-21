@@ -439,6 +439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760570621}
     m_Modifications:
+    - target: {fileID: 3904893811238309303, guid: cb1e5057b9496ef469c00fa70cd32960, type: 3}
+      propertyPath: m_text
+      value: CONTINUE ->
+      objectReference: {fileID: 0}
     - target: {fileID: 4260392446019855684, guid: cb1e5057b9496ef469c00fa70cd32960, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -561,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8719548333382952129, guid: cb1e5057b9496ef469c00fa70cd32960, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitButton
+      value: ContinueButton
       objectReference: {fileID: 0}
     - target: {fileID: 8719548333382952129, guid: cb1e5057b9496ef469c00fa70cd32960, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

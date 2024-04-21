@@ -19,10 +19,9 @@ public class KeyDetection : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Awake()
     {
-
+        KeyValue1 = 0; // Initialize KeyValue to 0
     }
 }
 

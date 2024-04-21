@@ -210,4 +210,9 @@ public class DungeonGenerator : MonoBehaviour
 
         return neighbors;
     }
+
+    public void Awake()
+    {
+        KeysNeeded = 0;
+    }
 }

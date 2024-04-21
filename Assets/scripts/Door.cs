@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     public void Destroy()
     {
         doorObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     void OnTriggerEnter(Collider collision)
     {
