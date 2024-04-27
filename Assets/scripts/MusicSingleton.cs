@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MusicSingleton : MonoBehaviour
 {
     public GameObject music;
@@ -9,7 +10,6 @@ public class MusicSingleton : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
         DontDestroyOnLoad(music);
     }
 }

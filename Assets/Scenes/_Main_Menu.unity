@@ -771,14 +771,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 561583318860834029, guid: b11d69190c6eeac4eae8e0e04b84768e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 959223981212604115, guid: b11d69190c6eeac4eae8e0e04b84768e, type: 3}
+      propertyPath: impact
+      value: 
+      objectReference: {fileID: 8300000, guid: 695a9200f6ba1294bbe3c21ea7c78b96, type: 3}
     - target: {fileID: 5892290244904551240, guid: b11d69190c6eeac4eae8e0e04b84768e, type: 3}
       propertyPath: m_Name
       value: Music
       objectReference: {fileID: 0}
-    - target: {fileID: 5892290244904551241, guid: b11d69190c6eeac4eae8e0e04b84768e, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 695a9200f6ba1294bbe3c21ea7c78b96, type: 3}
     - target: {fileID: 5892290244904551242, guid: b11d69190c6eeac4eae8e0e04b84768e, type: 3}
       propertyPath: m_RootOrder
       value: 2
